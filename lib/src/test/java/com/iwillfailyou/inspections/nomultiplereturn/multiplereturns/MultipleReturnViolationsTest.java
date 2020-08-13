@@ -3,10 +3,11 @@ package com.iwillfailyou.inspections.nomultiplereturn.multiplereturns;
 import com.github.javaparser.JavaParser;
 import com.github.javaparser.ParserConfiguration;
 import com.iwillfailyou.inspection.JavaViolations;
-import java.util.List;
 import org.hamcrest.core.IsEqual;
 import org.junit.Assert;
 import org.junit.Test;
+
+import java.util.List;
 
 public final class MultipleReturnViolationsTest {
 
@@ -168,10 +169,12 @@ public final class MultipleReturnViolationsTest {
             multipleReturns.size(),
             IsEqual.equalTo(2)
         );
+        System.out.println(multipleReturns.get(0).description());
         Assert.assertThat(
             multipleReturns.get(0).description(),
             IsEqual.equalTo("A.a(A.java:2)")
         );
+        System.out.println(multipleReturns.get(1).description());
         Assert.assertThat(
             multipleReturns.get(1).description(),
             IsEqual.equalTo("A.a(A.java:5)")
